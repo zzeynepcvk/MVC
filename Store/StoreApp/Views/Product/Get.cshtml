@@ -1,0 +1,74 @@
+@* <!-- @{
+    Layout= null;
+
+}
+ eğer layout un bu sayfada 
+uygulanmasını istrmiyorsanb kullan -->  *@
+
+@model Product
+
+<div style="display: flex; flex-wrap: wrap; margin-left: -15px; margin-right: -15px;"> 
+    <div style="flex: 0 0 100%; max-width: 100%; padding-left: 15px; padding-right: 15px;">
+        <div style="text-align: center;">
+            <h6 style="font-size: 1.25rem;"> 
+                @Model.ProductName
+            </h6>
+
+            <img width="350" style="max-width: 100%; height: auto; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15); border-radius: 0.3rem; margin-top: 1rem; margin-bottom: 1rem;" src="@Model?.ImageUrl" alt="@Model?.ProductName">
+
+            <p style="font-size: 1.25rem; color: #000000;">@Model.Price.ToString("c")</p>
+        </div>
+    </div>
+</div>
+ 
+<div style="display: flex; flex-direction: row;"> 
+    <a style="display: inline-block; font-weight: 400; color: #fff; text-align: center; vertical-align: middle; user-select: none; background-color: #007bff; border: 1px solid #007bff; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; border-radius: 0.25rem; text-decoration: none; margin-right: 5px;" asp-controller="Home" asp-action="Index">
+        <i class="fa-solid fa-house"></i>
+        Home
+    </a>
+    <a style="display: inline-block; font-weight: 400; color: #007bff; text-align: center; vertical-align: middle; user-select: none; background-color: transparent; border: 1px solid #007bff; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; border-radius: 0.25rem; text-decoration: none;" asp-controller="Product" asp-action="Index">
+        <i class="fa-solid fa-list-ul"></i>
+        Products
+    </a>
+</div>
+
+@section Header {
+    <div>
+        Header for only get 
+    </div>
+}
+
+
+@* 
+bootstrap kullanılmıs  kod 
+ @model Product
+
+<div class="row"> 
+    <div class="col-md-12">
+        <div class="text-center">
+            <h6 class="display-6"> 
+                @Model.ProductName
+            </h6>
+
+            <img width="350" class="img-fluid shadow rounded-3 my-3" src="@Model?.ImageUrl" alt="@Model?.ProductName">
+
+            <p class="lead text-danger">@Model.Price.ToString("c")</p>
+        </div>
+    </div>
+</div>
+ 
+<div class="btn-group"> 
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Index">
+        <i class="fa-solid fa-house"></i>
+        Home</a>
+    <a class="btn btn-outline-primary" asp-controller="Product" asp-action="Index">
+        <i class="fa-solid fa-list-ul"></i>
+        Products</a>
+</div>
+
+@section Header {
+    <div>
+        Header for only get 
+    </div>
+} *@
+

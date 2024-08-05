@@ -1,0 +1,30 @@
+@* @model IEnumerable<Category>
+
+<div class="text-center my-3">
+    <h6 class="display-6">
+        Categories
+    </h6>
+</div>
+    <ul class="list-group my-3">
+        @foreach(var cat in Model)
+        {
+            <li class="list-group-item">@cat.CategoryName</li>
+        }
+    </ul> *@
+
+
+    @model IEnumerable<Category>
+
+<div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+    <h6 style="font-size: 1.25rem;">
+        Categories
+    </h6>
+</div>
+<ul style="list-style: none; padding: 0; margin-top: 1rem; margin-bottom: 1rem;">
+    @foreach(var cat in Model)
+    {
+        <li style="padding: 0.75rem 1.25rem; margin-bottom: -1px; background-color: #fff; border: 1px solid rgba(0, 0, 0, 0.125);">
+            @cat.CategoryName
+        </li>
+    }
+</ul>

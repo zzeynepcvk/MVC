@@ -1,0 +1,56 @@
+@* @model Product
+
+<div class="col-sm-12 col-md-4  my-2" style="">
+    <div class="card" style="width: 18rem;">
+        <img src="@Model?.ImageUrl" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Model?.ProductName</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <div class="btn btn-group">
+
+                <a asp-action="Get" asp-route-id="@Model?.ProductId" class="btn btn-primary">
+                    <i class="fa-solid fa -arrow-right"></i>
+                    Details</a>
+
+                <form id="@Model.ProductId" asp-page="/cart" method="post">
+                    <input type="hidden" asp-for="ProductId">
+                    <input type="hidden" name="returnUrl" value="/Product/Get/@Model.ProductId">
+                    <button type="submit" class="btn btn-outline-primary ">
+                        <i class="fa fa-cart-plus"></i>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ *@
+
+
+@model Product
+
+<div  style= " flex: 0 0 auto; width: 33.3333%; padding: 10px; box-sizing: border-box;">
+    <div class="card" style="width: 18rem; border: 1px solid #ddd; border-radius: 4px; overflow: hidden;">
+        <img src="@Model?.ImageUrl" style="width: 100%; height: auto;" alt="...">
+        <div class="card-body" style="padding: 15px;">
+            <h5 class="card-title" style="font-size: 1.25rem; margin-bottom: .75rem;">@Model?.ProductName</h5>
+            <p class="card-text" style="margin-bottom: 1rem; color: #6c757d;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div style="display: flex; justify-content: space-between;">
+                <a asp-action="Get" asp-route-id="@Model?.ProductId" style="padding: .375rem .75rem; border: 1px solid transparent; border-radius: .25rem; background-color: #cc3e93; color: white; text-decoration: none; text-align: center;">
+                    <i class="fa-solid fa-arrow-right" style="margin-right: 5px;"></i>Details
+                </a>
+
+                <form id="@Model.ProductId" asp-page="/cart" method="post" style="display: inline;">
+                    <input type="hidden" asp-for="ProductId">
+                    <input type="hidden" name="returnUrl" value="/Product/Get/@Model.ProductId">
+                    <button type="submit" style="padding: .375rem .75rem; border: 1px solid #007bff; border-radius: 20px; background-color: white; color: #007bff;">
+                        <i class="fa fa-cart-plus"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

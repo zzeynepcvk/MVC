@@ -1,0 +1,14 @@
+@page
+@model StoreApp.Pages.DemoModel
+@{
+}
+
+<div style="margin-top: 3rem; margin-bottom: 3rem; text-align: center;">
+    <div class="display-6"> Merhaba @Model?.FullName</div>
+    <form method="post" asp-page="/demo">
+        <div style="margin-bottom: 1rem;">
+            <input style="display: block; width: 100%; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border: 1px solid #ced4da; border-radius: 0.25rem;" name="name" placeholder="Enter your name" />
+            <input type="submit" style="color: #fff; background-color: #007bff; border-color: #007bff; display: block; width: 20%; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; border-radius: 0.25rem; margin-top: 1rem; margin-bottom: 1rem;" />
+        </div>
+    </form>
+</div>
